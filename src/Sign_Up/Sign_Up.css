@@ -1,0 +1,99 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    background-color: #F2F2F7;
+}
+
+
+.container {  
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top:10%;
+    max-width: 900px;
+    overflow:hidden;
+}
+
+.login {
+    display:flex;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.lmember {
+    color: #A45FDF;
+    margin-left:3px;
+    text-decoration: none;
+}
+
+
+
+.form_member {
+    display:flex;
+    flex-direction: column;
+    margin:20px;
+    width:250px;
+    
+    
+}
+
+label {
+    font:Roboto Slab;
+    font-size: 16px;
+    font-weight:bold;
+}
+
+input, #dropdown {
+    
+    font:Roboto Slab;
+    font-size:16px;
+    border-radius: 4px;
+    padding:3px;
+}
+
+.submitbtn, .resetbtn {
+   width:250px;
+   border-radius: 4px;
+   margin-bottom:5px;
+   font-weight: bold;
+   font-size: 16px;
+   color:white;
+   cursor: pointer;
+}
+
+.submitbtn {
+    margin-top:15px;
+    background-color: #A45FDF;
+border: solid #A45FDF;}
+
+.resetbtn {
+   
+    background-color: #CA3B3B;
+    border: solid #CA3B3B;
+
+}
+
+::placeholder {
+    color:#AEAEB2;
+}
+
+#password {
+    padding-right:20px;
+}
+  
+#signupform input[type="password"] {
+padding: 3px 30px 3px 3px;
+}
+
+.psw {
+    position:relative;
+}
+
+.fa-eye {
+    position:absolute;
+    top:50%;
+    right:4%;
+    color:#AEAEB2;
+}
