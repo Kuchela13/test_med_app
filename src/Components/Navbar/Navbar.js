@@ -6,10 +6,10 @@ function Navbar() {
 <nav>
 <div className="nav__logo">
 
-<a className="SH" href="/">
+<a className="SH" href="#">
   StayHealthy 
 
-  <img src="Capture.PNG" alt="logo of medical hospital" height="40" width="40" viewBox="0 0 1000 1000" style={{fill:"#3685fb"}}/>
+  <img src="https://cdn.pixabay.com/photo/2020/04/10/12/34/sign-5025586_1280.png" alt="logo of medical hospital" height="50" width="50" viewBox="0 0 1000 1000" style={{fill:"#3685fb"}}/>
 </a>
 
 <span></span>
@@ -39,7 +39,7 @@ function Navbar() {
 
 <li className="link">
 <a href="../Sign_Up/Sign_Up.html">
-<button class="btn1">Sign Up</button>
+<button className="btn1">Sign Up</button>
 </a>
 </li>
 
