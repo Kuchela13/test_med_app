@@ -1,4 +1,5 @@
 import './Navbar.css';
+import { Link } from "react-router-dom";
 
 function Navbar() {
     return (
@@ -22,7 +23,8 @@ function Navbar() {
 
 <ul className="active_nav_links">
 <li className="link">
-<a href="../Landing_Page/LandingPage.html"> Home</a>
+    <Link to="/landingpage">Home</Link>
+
 </li>
 
 <li className="link">
@@ -38,15 +40,15 @@ function Navbar() {
 </li>
 
 <li className="link">
-<a href="../Sign_Up/Sign_Up.html">
-<button className="btn1">Sign Up</button>
-</a>
+<Link to="/signup" id="btn1">Sign Up</Link>
+
+
 </li>
 
 <li className="link">
-<a href="../Login/Login.html">
-<button className="btn1">Login</button>
-</a>
+<Link to="/login" id="btn1">Login</Link>
+
+
 </li>
 </ul>
 
