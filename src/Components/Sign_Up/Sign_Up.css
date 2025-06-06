@@ -34,7 +34,8 @@
     display:flex;
     flex-direction: column;
     margin: 15px;
-    width:250px;
+    width:100%;
+  
     
     
 }
@@ -79,21 +80,31 @@ border: solid #A45FDF;}
     color:#AEAEB2;
 }
 
-#password {
-    padding-right:20px;
-}
+
   
 #signupform input[type="password"] {
 padding: 3px 30px 3px 3px;
+width:100%;
 }
 
 .psw {
     position:relative;
+    margin-bottom: 20px;
+  height: 50px;
+ 
 }
 
 .fa-eye {
     position:absolute;
-    top:50%;
-    right:4%;
+  top:69%;
+  right:4%;
+
     color:#AEAEB2;
+   
+}
+
+.error-message {
+     color: red;
+  margin-top: 5px;
+
 }

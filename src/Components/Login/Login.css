@@ -93,7 +93,7 @@ padding: 3px 30px 3px 3px;
 
 .fa-eye {
     position:absolute;
-    top:57%;
+    top:69%;
     right:4%;
     color:#AEAEB2;
 }
@@ -102,4 +102,9 @@ padding: 3px 30px 3px 3px;
     text-decoration: none;
     color:black;
     font-size: 16px;
+}
+
+.error-message{
+  color: red;
+  margin-top: 5px;
 }
