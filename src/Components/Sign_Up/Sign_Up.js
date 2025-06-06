@@ -134,7 +134,7 @@ const Sign_Up = () => {
                         </div>
 
 
-       <div className="form_member">
+       <div className="form_member psw">
            <label htmlFor="password">Password</label>
            <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
            <i className="fa-solid fa-eye" id="show_password"></i>
