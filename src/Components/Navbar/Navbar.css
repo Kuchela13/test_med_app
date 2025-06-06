@@ -21,13 +21,14 @@ nav {
     margin-bottom: 0;
 }
 
-.active_nav_links {
+.nav_links {
     list-style:none;
-    display:flex;
-    align-items:center;
     gap:1rem;
     font-size:1rem;
     font-weight:500;
+    display:flex; 
+    align-items: center;
+    
 }
 
 .SH {
@@ -51,7 +52,7 @@ nav {
    
   }
 
-#btn1 {
+.btn1 {
     background-color: #A45FDF;
     font-size: 16px;
     font:Roboto Serif;
@@ -64,7 +65,7 @@ nav {
    
 }
 
-.link a {
+.link .newlink {
     font:Roboto Serif;
     font-weight:bold;
     font-size:20px;
@@ -74,7 +75,7 @@ nav {
     
 }
 
-.link a:hover {
+.link .newlink:hover {
     color:#A45FDF;
     text-decoration: underline;
   
