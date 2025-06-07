@@ -88,8 +88,8 @@ const Sign_Up = () => {
 </div>
 <div className="login">
     <p className="member"> Already a member?</p>
-   <a href="../Login/Login.html" className="lmember">Login</a>
-    
+  
+    <Link to="/login" id="lmember"> Login</Link>
 </div>
             
                 <div id="signupform">
@@ -144,18 +144,20 @@ const Sign_Up = () => {
 
 
                     </form>
-                </div>
-          
-<div className="sbutton">
-    <a href="#">
+
+                    <div className="sbutton">
+    
         <button type="submit" className="submitbtn" onClick={register}>Submit</button>
-    </a>
+   
 </div>
 <div className="rbutton">
-    <a href="#">
+
         <button type="reset" className="resetbtn">Reset</button>
-    </a>
+    
 </div>
+                </div>
+          
+
 
         </div>
         
