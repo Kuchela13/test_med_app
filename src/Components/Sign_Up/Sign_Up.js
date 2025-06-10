@@ -15,6 +15,8 @@ const Sign_Up = () => {
     const [showerr, setShowerr] = useState(''); // State to show error messages
     const navigate = useNavigate(); // Navigation hook from react-router
     const [errors, setErrors] = useState({});
+    
+    
     const validate = () => {
         const errors = {};
         if (!name) errors.name = 'Name is required';
@@ -61,6 +63,7 @@ const Sign_Up = () => {
         if (json.authtoken) {
             // Store user data in session storage
             sessionStorage.setItem("auth-token", json.authtoken);
+            sessionStorage.setItem("role", role);
             sessionStorage.setItem("name", name);
             sessionStorage.setItem("phone", phone);
             sessionStorage.setItem("email", email);

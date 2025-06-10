@@ -52,7 +52,7 @@ nav {
    
   }
 
-.btn1 {
+.btn1, .btn2  {
     background-color: #A45FDF;
     font-size: 16px;
     font:Roboto Serif;
@@ -64,6 +64,17 @@ nav {
     cursor: pointer;
    
 }
+.user-name {
+    margin-right: 10px; /* Add some space between the name and the button */
+    
+    text-decoration: underline;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+  }
+
 
 .link .newlink {
     font:Roboto Serif;
