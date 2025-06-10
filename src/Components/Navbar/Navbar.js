@@ -39,12 +39,17 @@ const Navbar = () => {
     }
     useEffect(() => { 
       const storedname = sessionStorage.getItem("name");
-
+      const storedemail=sessionStorage.getItem("email");  
       if (storedname) {
             setIsLoggedIn(true);
             setUsername(storedname);
           }
+          if (storedemail) {
+            setIsLoggedIn (true);
+        }
+   
         }, []);
+       
   return (
     <div>
     <nav>
