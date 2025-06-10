@@ -99,7 +99,7 @@ const Sign_Up = () => {
                     <form method="POST">
                         
                     <div className="form_member">
-            <label htmlFor="dropdown">Role</label>
+            <label htmlFor="dropdown" className="label">Role</label>
            <select id="dropdown" required className="form-control"   value={role}
           onChange={(e) => setRole(e.target.value)}
         >
@@ -116,7 +116,7 @@ const Sign_Up = () => {
 
                         {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
                         <div className="form_member">
-           <label htmlFor="name">Name</label>
+           <label htmlFor="name" className="label">Name</label>
            <input value={name} type="text" onChange={(e) => setName(e.target.value)} name="name" id="name" className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
            {errors.name && <p className="error-message">{errors.name}</p>}
        </div>
@@ -124,13 +124,13 @@ const Sign_Up = () => {
 
 
        <div className="form_member">
-           <label htmlFor="phone">Phone</label>
+           <label htmlFor="phone" className="label">Phone</label>
            <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" name="phone" id="phone" className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
            {errors.phone && <p className="error-message">{errors.phone}</p>}
        </div>
 
        <div className="form_member">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email" className="label">Email</label>
                             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
                             {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
                             {errors.email && <p className="error-message">{errors.email}</p>}
@@ -138,7 +138,7 @@ const Sign_Up = () => {
 
 
        <div className="form_member psw">
-           <label htmlFor="password">Password</label>
+           <label htmlFor="password" className="label">Password</label>
            <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
            <i className="fa-solid fa-eye" id="show_password"></i>
            {errors.password && <p className="error-message">{errors.password}</p>}

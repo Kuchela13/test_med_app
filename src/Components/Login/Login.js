@@ -97,7 +97,7 @@ const Login = () => {
           <div className="signupform">
             <form>
               <div className="form_member">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className="label">Email</label>
                 {/* Input field for email */}
                 <input 
                   value={email} 
@@ -112,7 +112,7 @@ const Login = () => {
                  {errors.email && <p className="error-message">{errors.email}</p>}
               </div>
               <div className="form_member psw">
-               <label htmlFor="password">Password</label>
+               <label htmlFor="password" className="label">Password</label>
                <input
                  value={password}
                  onChange={(e) => setPassword(e.target.value)}
