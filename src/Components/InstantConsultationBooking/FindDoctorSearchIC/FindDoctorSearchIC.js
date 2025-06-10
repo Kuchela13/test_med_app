@@ -4,7 +4,7 @@ import { useNavigate, Navigate } from 'react-router-dom';
 
 
 const initSpeciality = [
-    'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
+    'Dentist', 'ObGyn', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
 ]
 
 const FindDoctorSearchIC = () => {
