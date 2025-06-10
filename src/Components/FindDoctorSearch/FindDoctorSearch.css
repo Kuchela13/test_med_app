@@ -5,10 +5,48 @@
 
 .maincontainer {
     margin-top: 10%;
+    display: flex;
+    flex-direction: column;
 }
 
 .searchcontainer {
     width:350px;
     display:flex;
     margin: 0 auto;
+     position: relative;
+}
+
+.simg {
+    width: 20px;
+    height:20px;
+    position:absolute;
+    top:35%;
+    right:4%;
+}
+
+
+.searchbar {
+    padding-right: 20px;
+   
+}
+
+.mainimage {
+    width: 300px;
+    height: 300px;
+}
+
+.docresults {
+width: 300px;
+
+
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    column-gap: 14px;
+    cursor: pointer;
+    margin: 0 auto;
+    
 }
