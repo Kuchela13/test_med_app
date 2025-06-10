@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import './FindDoctorSearch.css';
 import { useNavigate, Navigate } from 'react-router-dom';
 
-const speciality = ["Paediatrician", "OBGyn", "Family Physician", "Dentist", "ENT", "Dermatologist" ]
+const speciality = ['Dentist', 'ObGyn', 'General Physician', 'Dermatologist', 'Ear-Nose-Throat (ENT) Specialist']
 
-const searchDoc = () => {
+const SearchDoc = () => {
     const [doctorResultHidden, setDoctorResultHidden] = useState(true);
     const [searchDoctor, setSearchDoctor] = useState('');
-    const [specialities, setSpecialities] = useState(initSpeciality);
+    const [specialities, setSpecialities] = useState(speciality);
     const navigate = useNavigate();
     const handleDocSelect = (speciality) => {
         setSearchDoctor(speciality);
@@ -18,8 +18,9 @@ const searchDoc = () => {
 
 return (
     <div className="maincontainer">
-<h1>Instant Consult</h1>
-
+        <div>
+<h1>Book an Appointment</h1>
+</div>
 <div className='searchcontainer'>
     <input type="text" className='searchbar' placeholder='Search for a doctor by speciality'
      onFocus={() => setDoctorResultHidden(false)} onBlur={() => setDoctorResultHidden(true)}
@@ -30,18 +31,22 @@ return (
 
 
 
-<div className='optionscontainer'>
+<div className='optionscontainer' hidden={doctorResultHidden}>
      {specialities.map (speciality=>
      <div className='docresults' key={speciality} 
-     onClick={()=> handleDocSelect(speciality)}>
+     onMouseDown={()=> handleDocSelect(speciality)}>
     <span  className='resultsbar'>{speciality}</span>
 </div>
-
+    
     )
-</di>
+    }
+
+</div>
 
 
 
     </div>
 )
 }
+
+export default SearchDoc
