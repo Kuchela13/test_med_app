@@ -17,7 +17,7 @@ const SearchDoc = () => {
 }
 
 return (
-    <div className="maincontainer">
+    <div id="maincontainer">
         <div>
 <h1>Book an Appointment</h1>
 </div>
@@ -25,8 +25,6 @@ return (
 <div className='imagecontainer'>
    < img className='mainimage' src='https://cdn.pixabay.com/photo/2017/12/20/18/39/medical-care-3030456_960_720.png' alt='logo showing two doctors, one male and one female, in white lab coats'/>
 </div>
-
-
 
 <div className='searchcontainer'>
     <input type="text" className='searchbar' placeholder='Search for a doctor by speciality'
@@ -36,20 +34,13 @@ return (
 <img className='simg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s' alt='search icon'/>
 </div>
 
-
-
-
-
 <div className='optionscontainer' hidden={doctorResultHidden}>
      {specialities.map (speciality=>
      <div className='docresults' key={speciality} 
      onMouseDown={()=> handleDocSelect(speciality)}>
     <span  className='resultsbar'>{speciality}</span>
 </div>
-    
-    )
-    }
-
+    )}
 </div>
 
 
