@@ -9,6 +9,7 @@
     border: 1px black solid;
     border-radius: 8px;
    margin: 0px 5px 15px 5px;
+   background-color: white;
 }
 
 .bookbutton {
@@ -17,7 +18,31 @@
     border-radius: 28px;
     color:white;
     font-weight: bold;
-   font-size: 16px;
+   font-size: 18px;
    cursor:pointer;
    padding:3px;
+}
+
+.docimg {
+    padding : 0px;
+    width:150px;
+    height:150px;  
+    margin-bottom: 0px;
+}
+
+.docdetailscontainer{
+    margin-top: 0px;
+}
+
+.docimgcontainer {
+    margin-bottom: -20px;
+}
+
+.docname {
+    padding:0px;
+    font-size: 24px;
+}
+
+.docspeciality {
+    font-size: 20px;
 }

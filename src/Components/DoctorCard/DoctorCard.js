@@ -30,7 +30,11 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
 <div className='main-container'>
 <div className='doctorcardcontainer'>
 
-    <div className='docimgcontainer'></div>
+    <div className='docimgcontainer'>
+    <img className='docimg' src='https://png.pngtree.com/png-vector/20220527/ourmid/pngtree-doctor-silhouette-icon-vector-medical-png-image_4752916.png'
+    alt='silhouette of a doctor with a stethescope' />
+
+    </div>
 
     <div className='docdetailscontainer'>
         <div className='docname'>{name}</div>
