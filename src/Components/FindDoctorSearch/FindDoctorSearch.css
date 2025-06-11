@@ -13,24 +13,25 @@
 div h1 {
     font-size: 48px;
 }
-.searchcontainer {
+#searchcontainer {
     width:350px;
     display:flex;
     margin: 0 auto;
-     position: relative;
+    position: relative;
 }
 
-.simg {
+#simg {
     width: 20px;
     height:20px;
     position:absolute;
-    top:35%;
-    right:4%;
+    top:28%;
+    right:2%;
 }
 
 
 .searchbar {
     padding-right: 20px;
+    width:100%;
    
 }
 

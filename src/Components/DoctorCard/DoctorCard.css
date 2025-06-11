@@ -1,0 +1,23 @@
+.main-container {
+    display:inline-block;
+    width: 300px;
+ 
+}
+.doctorcardcontainer {
+    max-width: 300px;
+    padding:10px;
+    border: 1px black solid;
+    border-radius: 8px;
+   margin: 0px 5px 15px 5px;
+}
+
+.bookbutton {
+    background-color: #A45FDF;
+    border:#A45FDF;
+    border-radius: 28px;
+    color:white;
+    font-weight: bold;
+   font-size: 16px;
+   cursor:pointer;
+   padding:3px;
+}
