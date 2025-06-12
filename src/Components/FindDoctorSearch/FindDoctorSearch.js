@@ -17,8 +17,8 @@ const SearchDoc = () => {
 }
 
 return (
-    <div id="maincontainer">
-        <div>
+    <section id="maincontainer">
+        <div >
 <h1>Book an Appointment</h1>
 </div>
 
@@ -45,7 +45,7 @@ return (
 
 
 
-    </div>
+    </section>
 )
 }
 
