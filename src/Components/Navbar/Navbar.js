@@ -6,11 +6,12 @@ import "./Navbar.css";
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
-
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
     const[email,setEmail]=useState("");
     const [showDropdown, setShowDropdown] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+    
     const handleClick = () => setClick(!click);
 
     
@@ -57,13 +58,13 @@ const Navbar = () => {
         <Link to="/landingpage" className="SH">
         StayHealthy   <img src="https://cdn.pixabay.com/photo/2020/04/10/12/34/sign-5025586_1280.png" alt="logo of medical hospital" height="50" width="50" viewBox="0 0 1000 1000" style={{fill:"#3685fb"}}/></Link>
         <span></span>
-        <div className="Nicon" onClick={handleClick}>
+        <div id="Nicon1" onClick={handleClick}>
         <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
       </div>
 
       </div>
       
-      <ul className="nav_links">
+      <ul className={`nav_links ${click ? 'active' : ''}`}>
         <li className="link">
           <Link to="/landingpage" className="newlink">Home</Link>
         </li>
