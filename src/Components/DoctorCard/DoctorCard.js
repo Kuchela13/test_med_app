@@ -9,9 +9,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     const [showModal, setShowModal] = useState(false);
     const [appointments, setAppointments] = useState([]);
   
-    const handleBooking = () => {
-      setShowModal(true);
-    };
+
   
     const handleCancel = (appointmentId) => {
       const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
@@ -44,15 +42,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
         <div className='docrating'>Rating: {ratings}</div>
     </div>
 
-    <div className='bookbuttoncontainer'>
-        <button className='bookbutton' onClick={handleBooking}>
-            <div>Book Appointment</div>
-            <div>No Booking Fee</div>
-        </button>
-    </div>   
-</div>
-
-<div className='bookappointmentcontainer'>
+    <div className='bookappointmentcontainer'>
     <Popup trigger= {
         <button className={`bookbutton ${appointments.length > 0 ? 'cancelappointment' : ''}`}>
               {appointments.length > 0 ? (
@@ -102,6 +92,9 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
    )}
     </Popup>
     </div>
+</div>
+
+
 </div>
 )}
 

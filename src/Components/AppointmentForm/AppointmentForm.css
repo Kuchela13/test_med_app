@@ -1,0 +1,52 @@
+.appointment-form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_label {
+    display:flex;
+    justify-content: flex-start;
+}
+
+.form_label2 {
+    display:flex;
+    justify-content: flex-start;
+    color:#AEAEB2;
+}
+
+.form-group1 {
+    margin: 15px 0px 0px 0px;
+    padding:0;
+    width:100%;
+}
+
+.date_input {
+    width:100%;
+}
+
+#timeslot {
+    color:#AEAEB2;
+    width: 100%;
+    
+}
+
+.option {
+    color:black;
+}
+
+.book_btn {
+    background-color: #A45FDF;
+    border:#A45FDF;
+    border-radius: 28px;
+    color:white;
+    font-weight: bold;
+   font-size: 18px;
+   cursor:pointer;
+   padding:8px;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #AEAEB2;
+  }

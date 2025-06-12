@@ -71,7 +71,7 @@ const InstantConsultation = () => {
                     {filteredDoctors.length > 0 ? (
                     filteredDoctors.map(doctor => <DoctorCard className="doctorcard" {...doctor} key={doctor.name} />)
                     ) : (
-                    <p>No doctors found.</p>
+                    <p>No doctors with available slots at this time. Please try again later.</p>
                     )}
                 </center>
                 ) : (
