@@ -20,6 +20,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
       const newAppointment = {
         id: uuidv4(),
         ...appointmentData,
+        
       };
       const updatedAppointments = [...appointments, newAppointment];
       setAppointments(updatedAppointments);
@@ -77,11 +78,12 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
 {appointments.length > 0 ? (
 <>
 <h3> Appointment Booked Successfully!</h3>
+<h6>Please await a text message confirming your appointment date and time slot.</h6>
 {appointments.map((appointment) => (
     <div className="bookedInfo" key={appointment.id}>
     <p>Name: {appointment.name}</p>
     <p>Phone Number: {appointment.phoneNumber}</p>
-    <p>Appointment Date:{appointment.Date}</p>
+
     <button onClick={() => handleCancel(appointment.id)}>Cancel Appointment</button>
     </div>
     ))}

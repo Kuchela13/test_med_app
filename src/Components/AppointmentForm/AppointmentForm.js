@@ -7,9 +7,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
        const [appointmentDate, setAppointmentDate] = useState('');
     const [timeSlot, setTimeSlot] = useState('');
     const [errors, setErrors] = useState({});
-    
    
-    
     const validate = () => {
         const errors = {};
         if (!name) errors.name = 'Name is required';
@@ -18,9 +16,12 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
           } else if (!/^\d{10}$/.test(phoneNumber)) {
             errors.phoneNumber = 'Phone number must be exactly 10 digits';
           }
-         
-        return errors;
-       
+        if (!appointmentDate) errors.appointmentDate="You must choose an appointment date";
+        if (!timeSlot) errors.timeSlot="You must choose a time slot";
+
+         setErrors(errors);
+         console.log(errors);
+        return errors;  
       };
      
     const handleFormSubmit = (e) => {
@@ -28,20 +29,16 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
       const validationErrors = validate();
       if (Object.keys(validationErrors).length === 0) {
         console.log('Form submitted');
+        onSubmit({ name, phoneNumber });
+        setName('');
+        setPhoneNumber('');
+        setAppointmentDate ('');
+        setTimeSlot ('');
+  
       } else {
         setErrors(validationErrors);}
-      onSubmit({ name, phoneNumber });
-      setName('');
-      setPhoneNumber('');
-      setAppointmentDate ('');
-      setTimeSlot ('');
-
-   
-        
     };
 
-   
-  
     return (
       <form className="appointment-form">
         <div className="form-group1">
@@ -54,6 +51,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
             required
             name="name"
             placeholder="Enter your name"
+            className='input'
           />
            {errors.name && <p className="error-message">{errors.name}</p>}
         </div>
@@ -65,8 +63,9 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             required
+            className='input'
           />
-           
+           {errors.phoneNumber && <p className="error-message">{errors.phoneNumber}</p>}
         </div>
 
         <div className="form-group1" >
@@ -78,24 +77,20 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
         value={appointmentDate}
         onChange={(e) => setAppointmentDate(e.target.value)}
       /> 
+       {errors.appointmentDate && <p className="error-message">{errors.appointmentDate}</p>}
         </div>
 
 <div className="form-group1">
 <label htmlFor="timeslot" className='form_label'>Time Slot:</label>
-           <select id="timeslot" required   value={timeSlot}
-          onChange={(e) => setTimeSlot(e.target.value)}
-        >
-                <option id="select1" value="" disabled selected hidden>Select a time slot</option> 
-                <option value="09:00" className='option'>09:00 AM</option>
-                <option value="10:00" className='option'>10:00 AM</option>
-                <option value="11:00" className='option'>11:00 AM</option>
-                <option value="12:00" className='option'>12:00 PM</option>
-                <option value="13:00" className='option'>01:00 PM</option>
-                <option value="14:00" className='option'>02:00 PM</option>
-                <option value="15:00" className='option'>03:00 PM</option>
-                <option value="16:00" className='option'>04:00 PM</option>
-                <option value="17:00" className='option'>05:00 PM</option>
-           </select>
+         
+            <input
+            type="time"
+            id="timeslot"
+            value={timeSlot}
+            onChange={(e) => setTimeSlot(e.target.value)}
+            required
+            />
+           {errors.timeSlot && <p className="error-message">{errors.timeSlot}</p>}
 </div>
 
         <button type="submit" onClick={handleFormSubmit} className='book_btn'>Book Now</button>
