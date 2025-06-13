@@ -6,15 +6,41 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [phoneNumber, setPhoneNumber] = useState('');
        const [appointmentDate, setAppointmentDate] = useState('');
     const [timeSlot, setTimeSlot] = useState('');
+    const [errors, setErrors] = useState({});
     
+   
+    
+    const validate = () => {
+        const errors = {};
+        if (!name) errors.name = 'Name is required';
+        if (!phoneNumber) {
+            errors.phoneNumber = 'Phone number is required';
+          } else if (!/^\d{10}$/.test(phoneNumber)) {
+            errors.phoneNumber = 'Phone number must be exactly 10 digits';
+          }
+         
+        return errors;
+       
+      };
+     
     const handleFormSubmit = (e) => {
       e.preventDefault();
+      const validationErrors = validate();
+      if (Object.keys(validationErrors).length === 0) {
+        console.log('Form submitted');
+      } else {
+        setErrors(validationErrors);}
       onSubmit({ name, phoneNumber });
       setName('');
       setPhoneNumber('');
       setAppointmentDate ('');
       setTimeSlot ('');
+
+   
+        
     };
+
+   
   
     return (
       <form className="appointment-form">
@@ -26,7 +52,10 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            name="name"
+            placeholder="Enter your name"
           />
+           {errors.name && <p className="error-message">{errors.name}</p>}
         </div>
         <div className="form-group1">
           <label htmlFor="phoneNumber" className='form_label'>Phone Number:</label>
@@ -37,6 +66,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
             onChange={(e) => setPhoneNumber(e.target.value)}
             required
           />
+           
         </div>
 
         <div className="form-group1" >

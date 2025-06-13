@@ -84,7 +84,7 @@ const Sign_Up = () => {
 
     // JSX to render the Sign Up form
     return (
-        <div className="container" >
+        <div className="container1" >
 
 <div>
     <h1 className="signup">Sign Up</h1>

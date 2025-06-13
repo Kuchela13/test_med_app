@@ -21,8 +21,8 @@ body {
   
 }
 
-.login1 {
-    font-size: 47px;
+#login1 {
+    font-size: 48px;
 }
 
 .login {
@@ -103,7 +103,7 @@ padding: 3px 30px 3px 3px;
 
 .fa-eye {
     position:absolute;
-    top:83%;
+    top:70%;
     right:4%;
     color:#AEAEB2;
 }

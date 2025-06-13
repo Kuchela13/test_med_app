@@ -82,8 +82,8 @@ const Login = () => {
     <div>
       <div className="container">
         
-          <div className="login1">
-            <h2>Login</h2>
+          <div >
+            <h2 id="login1">Login</h2>
           </div>
           <div className="login">
             Are you a new member? 

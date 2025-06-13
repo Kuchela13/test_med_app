@@ -19,11 +19,11 @@ const SearchDoc = () => {
 return (
     <section id="maincontainer">
         <div >
-<h1>Book an Appointment</h1>
+<h1>Looking for a doctor? Find one easily!</h1>
 </div>
 
 <div className='imagecontainer'>
-   < img className='mainimage' src='https://cdn.pixabay.com/photo/2017/12/20/18/39/medical-care-3030456_960_720.png' alt='logo showing two doctors, one male and one female, in white lab coats'/>
+   < img className='mainimage' src='https://cdn.pixabay.com/photo/2024/05/26/19/51/nursing-8789373_960_720.png' alt='picture showing two seated patients and one male doctor'/>
 </div>
 
 <div id='searchcontainer'>
