@@ -54,7 +54,7 @@ const BookingConsultation= () => {
     }, [searchParams])
     return (
     <center>
-<div className="search-container">
+<div className="search-container" style={{width: 900 }}>
         <FindDoctorSearch onSearch={handleSearch}/>
     <div className="search-results">
  {isSearched ? (
