@@ -24,9 +24,9 @@ return (
               <h4>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque at quae ducimus. Suscipit omnis quibusdam non cum rem voluptatem! 
               </h4>
-              <a href="#services">
+             
                 <button className="button"> <Link to="/signup" className="button">Get Started</Link></button>
-              </a>
+             
                 
           </div>
   

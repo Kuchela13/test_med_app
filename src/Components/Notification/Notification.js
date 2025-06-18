@@ -8,7 +8,7 @@ const Notification = ({ children }) => {
     const [appointmentData, setAppointmentData] = useState(null); 
 
 useEffect(() => {
-    const storedUsername = sessionStorage.getItem('email');
+    const storedUsername = sessionStorage.getItem('name');
     const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
     const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
 
@@ -32,7 +32,7 @@ return (
     {children}
     {isLoggedIn && appointmentData && (
         <>
-          <div className="appointment-card">
+          <div className="appointment-card1">
             <div className="appointment-card__content">
              
               <h3 className="appointment-card__title">Appointment Details</h3>
@@ -49,3 +49,5 @@ return (
 </div>
 );
 };
+
+export default Notification

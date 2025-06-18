@@ -16,7 +16,7 @@ function App() {
      
         <BrowserRouter>
        
-          <Navbar/>
+        
           <Notification>
           <Routes>
           <Route path="/" element={<Landing_Page/>}/>
@@ -25,7 +25,7 @@ function App() {
           <Route path="/login" element= {<Login/>}/>
           <Route path="/booking-consultation" element={<BookingConsultation />} />
           <Route path="/healthblog" element = {<HealthBlog/>} />
-          <Route path="/notification" element= {<Notification/>} />
+          <Route path="/Components/Notification/Notification" element= {<Notification/>} />
           </Routes>
           </Notification>
         </BrowserRouter>
