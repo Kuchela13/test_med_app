@@ -9,6 +9,7 @@ import Login from './Components/Login/Login'
 import BookingConsultation from './Components/BookingConsultation';  
 //import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
 import HealthBlog from './Components/HealthBlog/HealthBlog';
+import Notification from './Components/Notification/Notification';
 function App() {
   return (
 <div className="App">
@@ -16,15 +17,17 @@ function App() {
         <BrowserRouter>
        
           <Navbar/>
-        
+          <Notification>
           <Routes>
           <Route path="/" element={<Landing_Page/>}/>
           <Route path="/landingpage" element={<Landing_Page/>}/>
           <Route path="/signup" element= {<Sign_Up/>}/>
           <Route path="/login" element= {<Login/>}/>
-           <Route path="/booking-consultation" element={<BookingConsultation />} />
+          <Route path="/booking-consultation" element={<BookingConsultation />} />
           <Route path="/healthblog" element = {<HealthBlog/>} />
+          <Route path="/notification" element= {<Notification/>} />
           </Routes>
+          </Notification>
         </BrowserRouter>
 
 
