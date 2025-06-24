@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
 import Landing_Page from './Components/Landing_Page/Landing_Page';
@@ -11,13 +11,20 @@ import BookingConsultation from './Components/BookingConsultation';
 import HealthBlog from './Components/HealthBlog/HealthBlog';
 import Notification from './Components/Notification/Notification';
 function App() {
+    const [appointmentBooked, setAppointmentBooked] = useState(false);
+
+    // This function should be called when an appointment is booked
+    const handleAppointmentBooked = () => {
+      setAppointmentBooked(true);
+      setTimeout(() => setAppointmentBooked(false), 5000); // Hide notification after 5 sec
+    };
   return (
 <div className="App">
      
         <BrowserRouter>
        
         
-          <Notification>
+        <Notification appointmentBooked={appointmentBooked}>
           <Routes>
           <Route path="/" element={<Landing_Page/>}/>
           <Route path="/landingpage" element={<Landing_Page/>}/>
@@ -26,6 +33,7 @@ function App() {
           <Route path="/booking-consultation" element={<BookingConsultation />} />
           <Route path="/healthblog" element = {<HealthBlog/>} />
           <Route path="/Components/Notification/Notification" element= {<Notification/>} />
+        <Route path="/book" element={<BookingComponent onBooked={handleAppointmentBooked} />} /> 
           </Routes>
           </Notification>
         </BrowserRouter>
