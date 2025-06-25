@@ -30,10 +30,10 @@ function App() {
           <Route path="/landingpage" element={<Landing_Page/>}/>
           <Route path="/signup" element= {<Sign_Up/>}/>
           <Route path="/login" element= {<Login/>}/>
-          <Route path="/booking-consultation" element={<BookingConsultation />} />
+          <Route path="/booking-consultation" element={<BookingConsultation onBooked={handleAppointmentBooked}  />} />
           <Route path="/healthblog" element = {<HealthBlog/>} />
           <Route path="/Components/Notification/Notification" element= {<Notification/>} />
-        <Route path="/book" element={<BookingComponent onBooked={handleAppointmentBooked} />} /> 
+        
           </Routes>
           </Notification>
         </BrowserRouter>

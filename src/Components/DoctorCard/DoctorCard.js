@@ -5,7 +5,7 @@ import './DoctorCard.css';
 import { v4 as uuidv4 } from 'uuid';
 import AppointmentForm from  '../AppointmentForm/AppointmentForm';
 
-const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
+const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
     const [showModal, setShowModal] = useState(false);
     const [appointments, setAppointments] = useState([]);
   
@@ -33,10 +33,17 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
         ...appointmentData,
         
       };
-      const existingAppointments = JSON.parse(localStorage.getItem(name)) || [];
+      
       const updatedAppointments = [...appointments, newAppointment];
       setAppointments(updatedAppointments);
       localStorage.setItem(name, JSON.stringify(updatedAppointments));
+
+ if (onBooked) {
+      onBooked();
+    }
+
+
+      
       setShowModal(false);
     };
   return (

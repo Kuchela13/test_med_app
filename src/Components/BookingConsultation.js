@@ -3,7 +3,7 @@ import DoctorCard from './DoctorCard/DoctorCard';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-const BookingConsultation= () => {
+const BookingConsultation= ({onBooked}) => {
     const [searchParams] = useSearchParams();
     const [doctors, setDoctors] = useState([]);
     const [filteredDoctors, setFilteredDoctors] = useState([]);
@@ -63,7 +63,7 @@ const BookingConsultation= () => {
         <h3>Book an appointment now for minimum wait time</h3>
 
         {filteredDoctors.length >0 ? (
-            filteredDoctors.map(doctor => <DoctorCard className="doctor-card" {...doctor} key={doctor.name} />)
+            filteredDoctors.map(doctor => <DoctorCard className="doctor-card" {...doctor} key={doctor.name}   onBooked={onBooked}/>)
         ) : ( 
                 <p>No doctors with available slots at this time. Please try again later.</p>
         )}
