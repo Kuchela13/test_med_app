@@ -5,7 +5,7 @@ import './DoctorCard.css';
 import { v4 as uuidv4 } from 'uuid';
 import AppointmentForm from  '../AppointmentForm/AppointmentForm';
 
-const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
+const DoctorCard = ({ name, speciality, experience, ratings }) => {
     const [showModal, setShowModal] = useState(false);
     const [appointments, setAppointments] = useState([]);
       const [showNotification, setShowNotification] = useState(false);
@@ -29,12 +29,13 @@ const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
     };
   
     const handleFormSubmit = (appointmentData) => {
-      const newAppointment = {
+        setShowNotification(true);
+        const newAppointment = {
         id: uuidv4(),
         doctorName: name,
         doctorSpeciality: speciality,
         ...appointmentData,
-        
+         
       };
       
       const updatedAppointments = [...appointments, newAppointment];
@@ -44,7 +45,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
       doctorName: name,
       speciality,
       date: appointmentData.appointmentDate,
-      time: appointmentData.timeslot,
+      time: appointmentData.timeSlot,
       patientName: appointmentData.name,
       phone: appointmentData.phoneNumber
   }));
@@ -109,14 +110,12 @@ const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
     <div className="bookedInfo" key={appointment.id}>
     <p>Name: {appointment.name}</p>
     <p>Phone Number: {appointment.phoneNumber}</p>
-    <p>Date: {appointment.date}</p>
-    <p>Time: {appointment.time}</p>
     <button onClick={() => handleCancel(appointment.id)}>Cancel Appointment</button>
     </div>
     ))}
 </>
 ):(
-    <AppointmentForm doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
+    <AppointmentForm doctorName={name} doctorSpeciality={speciality}  onSubmit={handleFormSubmit} />
 )}
 </div>
    )}

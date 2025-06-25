@@ -7,6 +7,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
        const [appointmentDate, setAppointmentDate] = useState('');
     const [timeSlot, setTimeSlot] = useState('');
     const [errors, setErrors] = useState({});
+    
    
     const validate = () => {
         const errors = {};
@@ -29,7 +30,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
       const validationErrors = validate();
       if (Object.keys(validationErrors).length === 0) {
         console.log('Form submitted');
-        onSubmit({ name, phoneNumber });
+        onSubmit({ name, phoneNumber, appointmentDate, timeSlot});
         setName('');
         setPhoneNumber('');
         setAppointmentDate ('');

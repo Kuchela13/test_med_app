@@ -19,6 +19,7 @@ function App() {
     if (stored) {
       setAppointmentData(JSON.parse(stored));
       setShowNotification(true);
+    
     }
   }, []);
 
@@ -40,7 +41,7 @@ function App() {
           <Route path="/login" element= {<Login/>}/>
           <Route path="/booking-consultation" element={<BookingConsultation />} />
           <Route path="/healthblog" element = {<HealthBlog/>} />
-          <Route path="/Components/Notification/Notification" element= {<Notification/>} />
+       
         
           </Routes>
    
