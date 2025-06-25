@@ -63,7 +63,7 @@ const BookingConsultation= ({onBooked}) => {
         <h3>Book an appointment now for minimum wait time</h3>
 
         {filteredDoctors.length >0 ? (
-            filteredDoctors.map(doctor => <DoctorCard className="doctor-card" {...doctor} key={doctor.name}   onBooked={onBooked}/>)
+            filteredDoctors.map(doctor => <DoctorCard className="doctor-card" {...doctor} key={doctor.name} />)
         ) : ( 
                 <p>No doctors with available slots at this time. Please try again later.</p>
         )}

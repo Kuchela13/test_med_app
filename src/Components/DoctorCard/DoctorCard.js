@@ -8,13 +8,9 @@ import AppointmentForm from  '../AppointmentForm/AppointmentForm';
 const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
     const [showModal, setShowModal] = useState(false);
     const [appointments, setAppointments] = useState([]);
+      const [showNotification, setShowNotification] = useState(false);
   
-    //SC
-    useEffect(() => {
-        const storedAppointments = JSON.parse(localStorage.getItem(name)) || [];
-        setAppointments(storedAppointments);
-    }, [name]);
-
+ 
     const handleBooking = () => {
         setShowModal(true);
     };
@@ -22,7 +18,9 @@ const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
     const handleCancel = (appointmentId) => {
       const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
       setAppointments(updatedAppointments);
-      localStorage.setItem(name, JSON.stringify(updatedAppointments));
+        localStorage.removeItem("appointment");
+    setShowModal(false); 
+    setShowNotification(false); 
     };
   
     const handleFormSubmit = (appointmentData) => {
@@ -36,12 +34,14 @@ const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
       
       const updatedAppointments = [...appointments, newAppointment];
       setAppointments(updatedAppointments);
-      localStorage.setItem(name, JSON.stringify(updatedAppointments));
-
- if (onBooked) {
-      onBooked();
-    }
-
+       localStorage.setItem("appointment", JSON.stringify({
+      doctorName: name,
+      speciality,
+      date: appointmentData.appointmentDate,
+      time: appointmentData.timeslot,
+      patientName: appointmentData.name,
+      phone: appointmentData.phoneNumber
+  }));
 
       
       setShowModal(false);
