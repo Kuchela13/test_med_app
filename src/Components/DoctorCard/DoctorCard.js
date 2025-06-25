@@ -10,6 +10,10 @@ const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
     const [appointments, setAppointments] = useState([]);
       const [showNotification, setShowNotification] = useState(false);
   
+          useEffect(() => {
+        const storedAppointments = JSON.parse(localStorage.getItem(name)) || [];
+        setAppointments(storedAppointments);
+    }, [name]);
  
     const handleBooking = () => {
         setShowModal(true);
@@ -18,6 +22,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
     const handleCancel = (appointmentId) => {
       const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
       setAppointments(updatedAppointments);
+            localStorage.setItem(name, JSON.stringify(updatedAppointments));
         localStorage.removeItem("appointment");
     setShowModal(false); 
     setShowNotification(false); 
@@ -34,6 +39,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, onBooked }) => {
       
       const updatedAppointments = [...appointments, newAppointment];
       setAppointments(updatedAppointments);
+          localStorage.setItem(name, JSON.stringify(updatedAppointments));
        localStorage.setItem("appointment", JSON.stringify({
       doctorName: name,
       speciality,
