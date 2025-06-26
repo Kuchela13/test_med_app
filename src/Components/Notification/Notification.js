@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
+import "./Notification.css"
 
-const Notification = ({ children}) => {
+const Notification = ({ children, onClose}) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
     //const [doctorData, setDoctorData] = useState(null);
@@ -33,8 +34,8 @@ return (
     
 {isLoggedIn && appointmentData && (
         <>
-          <div className="appointment-card1">
-            <div className="appointment-card__content">
+          <div className="ncontainer">
+            <div className="notification-toast">
              
               <h3 className="appointment-card__title">Appointment Details</h3>
               <p className="appointment-card__message">
@@ -45,6 +46,7 @@ return (
             <strong>Date:</strong> {appointmentData.date}<br />
             <strong>Time:</strong> {appointmentData.time}
               </p>
+              <button className='b_t' onClick={onClose}>Dismiss</button>
             </div>
           </div>
         </>

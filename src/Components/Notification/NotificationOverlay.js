@@ -5,6 +5,7 @@ const NotificationOverlay = ({ appointment, onClose }) => {
   if (!appointment) return null;
 
   return (
+    <div className='ncontainer'>
     <div className="notification-toast">
       <h4>✅ Appointment Confirmed</h4>
       <p><strong>Doctor:</strong> {appointment.doctorName}</p>
@@ -13,7 +14,8 @@ const NotificationOverlay = ({ appointment, onClose }) => {
       <p><strong>Phone Number:</strong> {appointment.phone}</p>
       <p><strong>Date:</strong> {appointment.date}</p>
       <p><strong>Time:</strong> {appointment.time}</p>
-      <button onClick={onClose}>Dismiss</button>
+      <button className='b_t' onClick={onClose}>Dismiss</button>
+    </div>
     </div>
   );
 };

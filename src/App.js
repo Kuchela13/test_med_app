@@ -1,4 +1,3 @@
-
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -7,10 +6,9 @@ import Landing_Page from './Components/Landing_Page/Landing_Page';
 import Sign_Up from './Components/Sign_Up/Sign_Up';
 import Login from './Components/Login/Login'
 import BookingConsultation from './Components/BookingConsultation';  
-//import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
 import HealthBlog from './Components/HealthBlog/HealthBlog';
 import Notification from './Components/Notification/Notification';
-import NotificationOverlay from './Components/Notification/NotificationOverlay';
+
 function App() {
    const [showNotification, setShowNotification] = useState(false);
   const [appointmentData, setAppointmentData] = useState(null);
@@ -31,25 +29,21 @@ function App() {
 <div className="App">
      
         <BrowserRouter>
+     
        <Navbar/>
-        
-       
           <Routes>
-          <Route path="/" element={<Landing_Page/>}/>
-          <Route path="/landingpage" element={<Landing_Page/>}/>
-          <Route path="/signup" element= {<Sign_Up/>}/>
-          <Route path="/login" element= {<Login/>}/>
-          <Route path="/booking-consultation" element={<BookingConsultation />} />
-          <Route path="/healthblog" element = {<HealthBlog/>} />
-       
-        
+            <Route path="/" element={<Landing_Page/>}/>
+            <Route path="/landingpage" element={<Landing_Page/>}/>
+            <Route path="/signup" element= {<Sign_Up/>}/>
+            <Route path="/login" element= {<Login/>}/>
+            <Route path="/booking-consultation" element={<BookingConsultation />} />
+            <Route path="/healthblog" element = {<HealthBlog/>} />
           </Routes>
-   
+          {showNotification && appointmentData && (
+        <Notification onClose={dismissNotification} appointment={appointmentData}/>
+       )}
         </BrowserRouter>
 
-        {showNotification && appointmentData && (
-      <NotificationOverlay appointment={appointmentData} onClose={dismissNotification} />
-    )}
 
         </div>
 
