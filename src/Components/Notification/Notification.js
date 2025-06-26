@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import "./Notification.css"
 
-const Notification = ({ children, onClose}) => {
+const Notification = ({ children}) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
     //const [doctorData, setDoctorData] = useState(null);
     const [appointmentData, setAppointmentData] = useState(null); 
+    const [showNotification, setShowNotification] = useState(false);
     
 
 useEffect(() => {
@@ -26,6 +27,20 @@ useEffect(() => {
   }, []);
 
 
+  
+  useEffect(() => {
+    const stored = localStorage.getItem('appointment');
+    if (stored) {
+      setAppointmentData(JSON.parse(stored));
+      setShowNotification(true);
+    
+    }
+  }, []);
+
+  const dismissNotification = () => {
+    setShowNotification(false);
+    setAppointmentData(null);
+  };
 
 return (
 <div>
@@ -46,7 +61,7 @@ return (
             <strong>Date:</strong> {appointmentData.date}<br />
             <strong>Time:</strong> {appointmentData.time}
               </p>
-              <button className='b_t' onClick={onClose}>Dismiss</button>
+              <button className='b_t' onClick={dismissNotification} appointment={appointmentData}>Dismiss</button>
             </div>
           </div>
         </>

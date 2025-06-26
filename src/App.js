@@ -10,26 +10,12 @@ import HealthBlog from './Components/HealthBlog/HealthBlog';
 import Notification from './Components/Notification/Notification';
 
 function App() {
-   const [showNotification, setShowNotification] = useState(false);
-  const [appointmentData, setAppointmentData] = useState(null);
-  useEffect(() => {
-    const stored = localStorage.getItem('appointment');
-    if (stored) {
-      setAppointmentData(JSON.parse(stored));
-      setShowNotification(true);
-    
-    }
-  }, []);
 
-  const dismissNotification = () => {
-    setShowNotification(false);
-    setAppointmentData(null);
-  };
   return (
 <div className="App">
      
         <BrowserRouter>
-     
+    
        <Navbar/>
           <Routes>
             <Route path="/" element={<Landing_Page/>}/>
@@ -37,11 +23,10 @@ function App() {
             <Route path="/signup" element= {<Sign_Up/>}/>
             <Route path="/login" element= {<Login/>}/>
             <Route path="/booking-consultation" element={<BookingConsultation />} />
+            
             <Route path="/healthblog" element = {<HealthBlog/>} />
           </Routes>
-          {showNotification && appointmentData && (
-        <Notification onClose={dismissNotification} appointment={appointmentData}/>
-       )}
+          <Notification></Notification>
         </BrowserRouter>
 
 
