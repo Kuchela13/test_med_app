@@ -8,7 +8,7 @@ import Login from './Components/Login/Login'
 import BookingConsultation from './Components/BookingConsultation';  
 import HealthBlog from './Components/HealthBlog/HealthBlog';
 import Notification from './Components/Notification/Notification';
-
+import ReviewForm from './Components/ReviewForm/ReviewForm';
 function App() {
 
   return (
@@ -23,7 +23,7 @@ function App() {
             <Route path="/signup" element= {<Sign_Up/>}/>
             <Route path="/login" element= {<Login/>}/>
             <Route path="/booking-consultation" element={<BookingConsultation />} />
-            
+            <Route path="/reviews" element={<ReviewForm/>}/>
             <Route path="/healthblog" element = {<HealthBlog/>} />
           </Routes>
           <Notification></Notification>
