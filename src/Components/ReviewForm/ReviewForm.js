@@ -1,5 +1,30 @@
 import React, {useState} from "react";
-
+import "./ReviewForm.css"
+function StarRating({ rating, onChange }) {
+    const stars = [1, 2, 3, 4, 5];
+  
+    return (
+      <div>
+        {stars.map((star) => (
+          <span
+            key={star}
+            style={{
+              cursor: 'pointer',
+              color: star <= rating ? '#FFD700' : '#CCC',
+              fontSize: '24px',
+            }}
+            onClick={() => onChange(star)}
+            role="button"
+            tabIndex={0}
+            aria-label={`${star} Star${star > 1 ? 's' : ''}`}
+          >
+            &#9733;
+          </span>
+        ))}
+      </div>
+    );
+  }
+  
 const ReviewForm =() => {
     const [showForm, setShowForm] = useState(false);
     const [formData, setFormData] = useState({
@@ -63,7 +88,7 @@ const ReviewForm =() => {
 </table>
 
 {!showForm ? (
-        <button onClick={() => setShowForm(true)}>Add Review</button>
+        <button className="reviewbutton" onClick={() => setShowForm(true)}>Add Review</button>
       ) : (
         <form onSubmit={handleSubmit}>
           {showWarning && <p className="warning">Please fill out all fields.</p>}
