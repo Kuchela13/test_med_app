@@ -1,11 +1,32 @@
-.review-table {
+.reviewcontainer {
     width:100%;
-    text-align: center;
+
+}
+.review-table {
+ width:80%;
+    text-align:center;
+   
+    margin:auto;
+    border:1px black solid;
+    border-collapse: collapse;
 }
 
 
 .review-table th,
 .review-table td {
     padding: 10px;
+    border:1px black solid;
+    
 }
 
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+.providebtn {
+    background-color: #A45FDF;
+    border: #A45FDF;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 28px;
+    padding:5px;
+}
