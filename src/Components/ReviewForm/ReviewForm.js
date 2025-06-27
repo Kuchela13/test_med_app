@@ -54,8 +54,8 @@ const ReviewForm =() => {
             console.error('Error fetching appointments:', error);
             // Fallback: Use dummy data if API call fails or is not ready
             setAppointments([
-              { doctor: { id: 1, name: 'Dr. Smith', speciality: 'Cardiology' } },
-              { doctor: { id: 2, name: 'Dr. Jones', speciality: 'Dermatology' } },
+              { doctor: { id: 1, name: 'Dr. M. Smith', speciality: 'General Physician' } },
+              { doctor: { id: 2, name: 'Dr. J. Jones', speciality: 'Dentist' } },
             ]);
           }
         }
@@ -130,15 +130,16 @@ const ReviewForm =() => {
                 <td>{appt.doctor.speciality}</td>
                 <td>
                   {!showForm || selectedDoctor?.id !== appt.doctor.id ? (
-                    <button className="providebtn" onClick={() => handleProvideFeedback(appt.doctor)}>
-                      Provide Feedback
+                    <button className="providebtn" onClick={() => handleProvideFeedback(appt.doctor)} disabled={review}>
+                     {review ? `Reviewed` : 'Provide Feedback'}
+                      
                     </button>
                   ) : (
                     <span>Review in progress</span>
                   )}
                 </td>
                 <td>
-                  {review ? `${review.review} (Rating: ${review.rating})` : 'No review yet'}
+                  {review ? `(Rating: ${review.rating})` : 'No review yet'}
                 </td>
               </tr>
             );
@@ -155,6 +156,7 @@ const ReviewForm =() => {
             placeholder="Doctor Name"
             value={formData.name}
             readOnly
+            className="fixed"
           />
           <input
             type="text"
@@ -162,17 +164,19 @@ const ReviewForm =() => {
             placeholder="Speciality"
             value={formData.speciality}
             readOnly
+            className="fixed"
           />
           <textarea
             name="review"
             placeholder="Write your review"
             value={formData.review}
             onChange={handleChange}
+            className="review"
           />
           <label>Rating:</label>
           <StarRating rating={formData.rating} onChange={handleStarChange} />
-          <button type="submit">Submit</button>
-          <button type="button" onClick={() => setShowForm(false)}>Cancel</button>
+          <button type="submit" className="btn_1">Submit</button>
+          <button type="button" onClick={() => setShowForm(false)} className="btn_2">Cancel</button>
         </form>
       )}
     </div>

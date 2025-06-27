@@ -5,7 +5,7 @@
 .review-table {
  width:80%;
     text-align:center;
-   
+   background: white;
     margin:auto;
     border:1px black solid;
     border-collapse: collapse;
@@ -29,4 +29,56 @@
     cursor: pointer;
     border-radius: 28px;
     padding:5px;
+}
+
+.review-form {
+    border:1px black solid;
+    display:flex;
+    flex-direction: column;
+    width:600px;
+    margin:auto;
+    background-color: white;
+    margin-top: 20px;
+    
+}
+
+.fixed {
+    text-align: center;
+    border:none;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.review {
+    margin:0px 10px 0px 10px;
+    height:100px;
+    padding:5px;
+}
+
+.btn_1,
+.btn_2 {
+   
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 28px;
+    padding:5px;
+    width:150px;
+    margin:auto;
+    margin-top:10px;
+}
+
+.btn_1 {
+    background-color: #A45FDF;
+    border: #A45FDF;
+}
+
+.btn_2 {
+    margin-bottom:10px;
+    background-color: red;
+    border:red;
+}
+
+:disabled {
+    background-color: grey;
 }
