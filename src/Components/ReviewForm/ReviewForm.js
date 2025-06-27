@@ -138,8 +138,8 @@ const ReviewForm =() => {
                     <span>Review in progress</span>
                   )}
                 </td>
-                <td>
-                  {review ? `(Rating: ${review.rating})` : 'No review yet'}
+                <td id="actual-review">
+                  {review ? `${review.review} (Rating: ${review.rating})` : 'No review yet'}
                 </td>
               </tr>
             );
@@ -168,10 +168,11 @@ const ReviewForm =() => {
           />
           <textarea
             name="review"
-            placeholder="Write your review"
+            placeholder="Write your review (Limit-200 characters)"
             value={formData.review}
             onChange={handleChange}
             className="review"
+            maxLength={200}
           />
           <label>Rating:</label>
           <StarRating rating={formData.rating} onChange={handleStarChange} />

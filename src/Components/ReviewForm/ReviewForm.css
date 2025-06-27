@@ -81,4 +81,14 @@
 
 :disabled {
     background-color: grey;
+    cursor:not-allowed
+}
+ 
+.actual-review {
+    width: 300px;
+    box-sizing: border-box; /* includes padding and border in width */
+    word-wrap: break-word;  /* breaks long words to prevent overflow */
+    overflow-wrap: break-word; /* modern equivalent for word-wrap */
+    white-space: normal; /* allows text to wrap to next line */
+    overflow: hidden; /* hides any overflow */
 }
