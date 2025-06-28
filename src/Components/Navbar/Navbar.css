@@ -136,3 +136,40 @@ nav {
 }
  
 }
+
+.profile-button {
+    background-color: #A45FDF;
+    font-size: 16px;
+    font:Roboto Serif;
+    font-weight:bold;
+    padding: 8px 16px 8px 16px;
+    color:white;
+    border-radius: 60px;
+    border: solid #A45FDF;
+    cursor: pointer;
+}
+
+.profile-dropdown {
+  position: relative; 
+  display: inline-block;
+  align-items: center;
+}
+
+.dropdown-content {
+  position: absolute; /* removes from normal flow */
+  top: 100%;           /* places it just below the button */
+  right: -7%;            /* aligns right edge with parent */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width: 150px;        /* or desired width */
+  z-index: 1000;       /* ensures it appears above other elements */
+  padding: 10px;
+  border-radius: 8px;
+  margin-top:3px;
+}
+
+#profile1 {
+    font-size: 16px;
+    padding:10px;
+}

@@ -9,14 +9,25 @@ import BookingConsultation from './Components/BookingConsultation';
 import HealthBlog from './Components/HealthBlog/HealthBlog';
 import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
+import ProfileCard from './Components/ProfileCard/ProfileCard';
+
+const user = {
+    name: "Jane Doe",
+    email: "jane.doe@example.com",
+    phone: "+1 234 567 890",
+  
+  };
+
+
 function App() {
 
+    
   return (
 <div className="App">
      
         <BrowserRouter>
     
-       <Navbar/>
+       <Navbar user={user}/>
           <Routes>
             <Route path="/" element={<Landing_Page/>}/>
             <Route path="/landingpage" element={<Landing_Page/>}/>
@@ -25,6 +36,7 @@ function App() {
             <Route path="/booking-consultation" element={<BookingConsultation />} />
             <Route path="/reviews" element={<ReviewForm/>}/>
             <Route path="/healthblog" element = {<HealthBlog/>} />
+          <Route path="/profile" element={<ProfileCard user={user} />} />
           </Routes>
           <Notification></Notification>
         </BrowserRouter>

@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import ProfileCard from '../ProfileCard/ProfileCard';
 
 
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
     const [click, setClick] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
     const[email,setEmail]=useState("");
-    const [showDropdown, setShowDropdown] = useState(false);
-    const [isActive, setIsActive] = useState(false);
+    const[phone,setPhone]=useState("");
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     
     const handleClick = () => setClick(!click);
 
@@ -32,21 +33,27 @@ const Navbar = () => {
             localStorage.removeItem(key);
           }
         }
-        setEmail('');
+       // setEmail('');
         window.location.reload();
     }
-    const handleDropdown = () => {
-      setShowDropdown(!showDropdown);
-    }
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+      };
     useEffect(() => { 
       const storedname = sessionStorage.getItem("name");
       const storedemail=sessionStorage.getItem("email");  
+      const storedphone=sessionStorage.getItem("phone");
       if (storedname) {
             setIsLoggedIn(true);
             setUsername(storedname);
           }
           if (storedemail) {
             setIsLoggedIn (true);
+            setEmail (storedemail);
+        }
+
+        if (storedphone) {
+            setPhone (storedphone);
         }
    
         }, []);
@@ -78,10 +85,25 @@ const Navbar = () => {
         <li className="link">
          <Link to="/reviews" className="newlink">Reviews</Link>
         </li>
+
+ 
+        <div className="profile-dropdown">
+        <button onClick={toggleDropdown} className="profile-button">
+        {username ? username : 'Guest'} ▼
+        </button>
+
+        {dropdownOpen && username && (
+          <div className="dropdown-content">
+           <li className="link">
+         <Link to="/profile" className="newlink " id="profile1">Your Profile</Link>
+        </li>
+          </div>
+        )}
+      </div>
+      
         {isLoggedIn?(
           <>
             <li className="link user-info">
-            <span className="user-name">{username}</span>
               <button className="btn2" onClick={handleLogout}>
                 Logout
               </button>

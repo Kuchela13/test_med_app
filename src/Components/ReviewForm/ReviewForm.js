@@ -139,8 +139,22 @@ const ReviewForm =() => {
                   )}
                 </td>
                 <td id="actual-review">
-                  {review ? `${review.review} (Rating: ${review.rating})` : 'No review yet'}
-                </td>
+  {review ? (
+    <>
+      <div className="review-text">{review.review}</div>
+      <div className="star-rating">
+        {/* Render stars based on review.rating */}
+        {Array.from({ length: review.rating }, (_, i) => (
+          <span key={i}>
+           ★
+          </span>
+        ))}
+      </div>
+    </>
+  ) : (
+    'No review yet'
+  )}
+</td>
               </tr>
             );
           })}
