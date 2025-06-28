@@ -63,6 +63,18 @@ const Login = () => {
       sessionStorage.setItem('auth-token', json.authtoken);
       sessionStorage.setItem('email', email);
 
+
+      const profileRes = await fetch(`${API_URL}/api/auth/user`, {
+        headers: {
+          "Authorization": `Bearer ${json.authtoken}`,
+          "Email": email,
+        },
+      });
+  
+      if (profileRes.ok) {
+        const user = await profileRes.json();
+        sessionStorage.setItem('username', user.name); // Store username
+      }
       // Redirect to home page and reload the window
       navigate('/');
       window.location.reload();

@@ -18,7 +18,7 @@ const Navbar = ({ user }) => {
     
     const handleLogout = () => {
         sessionStorage.removeItem("auth-token");
-        sessionStorage.removeItem("name");
+        sessionStorage.removeItem("username");
         sessionStorage.removeItem("email");
         sessionStorage.removeItem("phone");
         // remove email phone
@@ -40,7 +40,7 @@ const Navbar = ({ user }) => {
         setDropdownOpen(!dropdownOpen);
       };
     useEffect(() => { 
-      const storedname = sessionStorage.getItem("name");
+      const storedname = sessionStorage.getItem("username");
       const storedemail=sessionStorage.getItem("email");  
       const storedphone=sessionStorage.getItem("phone");
       if (storedname) {
@@ -87,7 +87,15 @@ const Navbar = ({ user }) => {
         </li>
 
  
-        <div className="profile-dropdown">
+      
+      
+        {isLoggedIn?(
+
+
+
+          <>
+
+<div className="profile-dropdown">
         <button onClick={toggleDropdown} className="profile-button">
         {username ? username : 'Guest'} ▼
         </button>
@@ -100,9 +108,8 @@ const Navbar = ({ user }) => {
           </div>
         )}
       </div>
-      
-        {isLoggedIn?(
-          <>
+
+
             <li className="link user-info">
               <button className="btn2" onClick={handleLogout}>
                 Logout
