@@ -7,7 +7,7 @@ import { API_URL } from '../../config';
 // Function component for Sign Up form
 const Sign_Up = () => {
     // State variables using useState hook
-    const [name, setName] = useState('');
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
@@ -19,7 +19,7 @@ const Sign_Up = () => {
     
     const validate = () => {
         const errors = {};
-        if (!name) errors.name = 'Name is required';
+        if (!username) errors.name = 'Name is required';
         if (!email) {
           errors.email = 'Email is required';
         } else if (!/\S+@\S+\.\S+/.test(email)) {
@@ -51,7 +51,7 @@ const Sign_Up = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                name: name,
+                name: username,
                 email: email,
                 password: password,
                 phone: phone,
@@ -64,7 +64,7 @@ const Sign_Up = () => {
             // Store user data in session storage
             sessionStorage.setItem("auth-token", json.authtoken);
             sessionStorage.setItem("role", role);
-            sessionStorage.setItem("name", name);
+            sessionStorage.setItem("username", username);
             sessionStorage.setItem("phone", phone);
             sessionStorage.setItem("email", email);
 
@@ -117,7 +117,7 @@ const Sign_Up = () => {
                         {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
                         <div className="form_member">
            <label htmlFor="name" className="label">Name</label>
-           <input value={name} type="text" onChange={(e) => setName(e.target.value)} name="name" id="name" className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
+           <input value={username} type="text" onChange={(e) => setUsername(e.target.value)} name="name" id="name" className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
            {errors.name && <p className="error-message">{errors.name}</p>}
        </div>
 

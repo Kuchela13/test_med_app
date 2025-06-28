@@ -43,14 +43,18 @@
     width:500px;
     padding: 0px 10px 10px 10px;
 }
-.editform > label,input {
+.editform > label, .input {
     margin-bottom:5px;
+    width:350px;
+    margin:auto;
 }
 .editform > label {
     padding-right:3px;
+    text-align:left;
 }
 
 .savebtn {
-    margin-top: 5px;
    margin:auto;
+
+    margin-top: 15px;
 }

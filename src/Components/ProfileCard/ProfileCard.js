@@ -125,14 +125,15 @@ const ProfileForm = () => {
               name="email"
               value={userDetails.email}
               disabled // Disable the email field
+              className="input"
             />
           </label>
           {/* Create similar logic for displaying and editing name and phone from userDetails */}
           <label>Name
-              <input type="text" name="name" value={updatedDetails.name} onChange={handleInputChange} />
+              <input className="input" type="text" name="name" value={updatedDetails.name} onChange={handleInputChange} />
             </label>
             <label>Phone
-              <input type="text" name="phone" value={updatedDetails.phone} onChange={handleInputChange} />
+              <input className="input" type="text" name="phone" value={updatedDetails.phone} onChange={handleInputChange} />
             </label>
           <button className="savebtn" type="submit">Save</button>
         </form>
