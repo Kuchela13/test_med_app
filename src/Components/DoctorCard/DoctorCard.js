@@ -4,7 +4,7 @@ import 'reactjs-popup/dist/index.css';
 import './DoctorCard.css';
 import { v4 as uuidv4 } from 'uuid';
 import AppointmentForm from  '../AppointmentForm/AppointmentForm';
-
+import Notification from "../Notification/Notification";
 const DoctorCard = ({ name, speciality, experience, ratings }) => {
     const [showModal, setShowModal] = useState(false);
     const [appointments, setAppointments] = useState([]);
@@ -19,27 +19,22 @@ const DoctorCard = ({ name, speciality, experience, ratings }) => {
         setShowModal(true);
     };
 
-    const handleCancel = (appointmentId) => {
-      const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
-      setAppointments(updatedAppointments);
-            localStorage.setItem(name, JSON.stringify(updatedAppointments));
-        localStorage.removeItem("appointment");
-    setShowModal(false); 
-    setShowNotification(false); 
-    };
+   
   
     const handleFormSubmit = (appointmentData) => {
-        setShowNotification(true);
+     
         const newAppointment = {
         id: uuidv4(),
         doctorName: name,
         doctorSpeciality: speciality,
         ...appointmentData,
          
+       
       };
       
       const updatedAppointments = [...appointments, newAppointment];
       setAppointments(updatedAppointments);
+      
           localStorage.setItem(name, JSON.stringify(updatedAppointments));
        localStorage.setItem("appointment", JSON.stringify({
       doctorName: name,
@@ -50,9 +45,18 @@ const DoctorCard = ({ name, speciality, experience, ratings }) => {
       phone: appointmentData.phoneNumber
   }));
 
-      
+      setShowNotification(true);
       setShowModal(false);
     };
+
+    const handleCancel = (appointmentId) => {
+        const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
+        setAppointments(updatedAppointments);
+              localStorage.setItem(name, JSON.stringify(updatedAppointments));
+          localStorage.removeItem("appointment");
+      setShowModal(false); 
+      setShowNotification(false); 
+      };
   return (
 <div className='main-container'>
 <div className='doctorcardcontainer'>
@@ -122,7 +126,7 @@ const DoctorCard = ({ name, speciality, experience, ratings }) => {
     </Popup>
     </div>
 </div>
-
+{showNotification && <Notification />}
 
 </div>
 )}

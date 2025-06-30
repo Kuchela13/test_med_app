@@ -32,7 +32,7 @@ useEffect(() => {
     const stored = localStorage.getItem('appointment');
     if (stored) {
       setAppointmentData(JSON.parse(stored));
-      setShowNotification(true);
+     
     
     }
   }, []);
